@@ -19,6 +19,8 @@ namespace PankkitiliSovellus
             Pankkitili pankkitili1 = new Pankkitili(int.Parse(alkusaldo));
 
             Console.WriteLine("Tilin 01 alkusaldo on: " + pankkitili1.Saldo);
+
+
         }
     }
 }
