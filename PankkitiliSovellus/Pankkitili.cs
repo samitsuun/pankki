@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace PankkitiliSovellus
 {
-    class Program
+    public class Pankkitili
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("PankkitiliSovellus v1");
-        }
     }
 }
