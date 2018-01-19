@@ -27,8 +27,18 @@ namespace PankkitiliSovellusTests
         [Test]
         public void LuoPankkitili()
         {
-            Pankkitili tili1 = new Pankkitili();
-            //Assert.That(2, Is.EqualTo(2));
+            Pankkitili tili1 = new Pankkitili(0);
+
+            // Testataan olion luokan tyyppi
+            Assert.IsInstanceOf<Pankkitili>(tili1);
+        }
+
+        [Test]
+        public void AsetaPankkitililleAlkusaldo()
+        {
+            Pankkitili tili1 = new Pankkitili(500);
+
+            Assert.That(500, Is.EqualTo(tili1.Saldo));
         }
 
     }

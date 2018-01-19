@@ -8,5 +8,12 @@ namespace PankkitiliSovellus
 {
     public class Pankkitili
     {
+        public Pankkitili(int alkusaldo)
+        {
+            Saldo = alkusaldo;
+        }
+
+
+        public int Saldo { get; set; }
     }
 }
