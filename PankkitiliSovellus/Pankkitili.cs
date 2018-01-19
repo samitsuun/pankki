@@ -15,5 +15,11 @@ namespace PankkitiliSovellus
 
 
         public int Saldo { get; set; }
+
+        public void Talleta(int maara)
+        {
+            Saldo += maara;
+            // sama kuin (Saldo = Saldo + maara).
+        }
     }
 }

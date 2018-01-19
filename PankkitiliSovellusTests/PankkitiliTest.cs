@@ -41,5 +41,16 @@ namespace PankkitiliSovellusTests
             Assert.That(500, Is.EqualTo(tili1.Saldo));
         }
 
+        [Test]
+        public void TalletaRahaaPankkitilille()
+        {
+            Pankkitili tili1 = new Pankkitili(666);
+            // Talletetaan rahaa tilille.
+            tili1.Talleta(134);
+
+            // Testataan tilin saldo
+            Assert.That(800, Is.EqualTo(tili1.Saldo));
+        }
+
     }
 }
