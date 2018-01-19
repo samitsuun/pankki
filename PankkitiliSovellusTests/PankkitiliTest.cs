@@ -24,11 +24,20 @@ namespace PankkitiliSovellusTests
          *  
          */
 
+        public Pankkitili tili1;
+
+        // OneTimeSetUp
+        // OneTimeTearDown
+        // TearDown 
+        [SetUp]
+        public void TestienAlustaja()
+        {
+            this.tili1 = new Pankkitili(100);
+        }
+
         [Test]
         public void LuoPankkitili()
         {
-            Pankkitili tili1 = new Pankkitili(0);
-
             // Testataan olion luokan tyyppi
             Assert.IsInstanceOf<Pankkitili>(tili1);
         }
@@ -36,20 +45,26 @@ namespace PankkitiliSovellusTests
         [Test]
         public void AsetaPankkitililleAlkusaldo()
         {
-            Pankkitili tili1 = new Pankkitili(500);
-
-            Assert.That(500, Is.EqualTo(tili1.Saldo));
+            Assert.That(100, Is.EqualTo(tili1.Saldo));
         }
 
         [Test]
         public void TalletaRahaaPankkitilille()
         {
-            Pankkitili tili1 = new Pankkitili(666);
             // Talletetaan rahaa tilille.
             tili1.Talleta(134);
 
-            // Testataan tilin saldo
-            Assert.That(800, Is.EqualTo(tili1.Saldo));
+            // Testataan arvon yhtäsuuruutta.
+            Assert.That(234, Is.EqualTo(tili1.Saldo));
+        }
+
+        [Test]
+        public void NostaRahaaPankkitililta()
+        {
+            // Nostetaan tilitä 50.
+            tili1.NostaRahaa(50);
+
+            Assert.That(50, Is.EqualTo(tili1.Saldo));
         }
 
     }

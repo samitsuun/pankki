@@ -21,5 +21,10 @@ namespace PankkitiliSovellus
             Saldo += maara;
             // sama kuin (Saldo = Saldo + maara).
         }
+
+        public void NostaRahaa (int maara)
+        {
+            Saldo -= maara;
+        }
     }
 }
