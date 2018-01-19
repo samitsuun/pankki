@@ -24,6 +24,11 @@ namespace PankkitiliSovellus
 
         public void NostaRahaa (int maara)
         {
+            if(Saldo - maara < 0)
+            {
+                throw new ArgumentException("Tilillä ei ole nostovaraa :(");
+            }
+
             Saldo -= maara;
         }
     }

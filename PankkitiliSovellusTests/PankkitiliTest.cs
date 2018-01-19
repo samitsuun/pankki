@@ -67,5 +67,15 @@ namespace PankkitiliSovellusTests
             Assert.That(50, Is.EqualTo(tili1.Saldo));
         }
 
+        [Test]
+        public void TiliEiMiinukselle()
+        {
+            // Testataan antaako ohjelma halutun virhetyypin.
+            Assert.Throws<ArgumentException>(() => tili1.NostaRahaa(125));
+            // Vaikka virhe sattuu niin raheita ei menetetä.
+            // Pitäisi olla loppusaldon kanssa sama.
+            Assert.That(100, Is.EqualTo(tili1.Saldo));
+        }
+
     }
 }
